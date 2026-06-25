@@ -1,121 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NaviBot Docs</title>
-  <meta name="description" content="Documentation and product overview website for NaviBot." />
+  <title>NaviBot | Intelligent Navigation Assistant</title>
+  <meta name="description" content="NaviBot is an intelligent navigation assistant concept with product docs, architecture notes, user flows, and roadmap." />
+  <meta property="og:title" content="NaviBot Documentation" />
+  <meta property="og:description" content="Product and technical documentation website for NaviBot." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="background-glow"></div>
+
   <header class="site-header">
-    <nav class="nav">
-      <a class="logo" href="#top">NaviBot</a>
+    <nav class="nav container">
+      <a class="logo" href="#top" aria-label="NaviBot home"><span>N</span>NaviBot</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <div class="nav-links">
-        <a href="#overview">Overview</a>
+        <a href="#product">Product</a>
         <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
         <a href="#docs">Docs</a>
         <a href="#roadmap">Roadmap</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
       </div>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Navigation assistant documentation</p>
-        <h1>Build, document, and explain NaviBot clearly.</h1>
+    <section class="hero container">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Navigation intelligence · Product docs · System design</p>
+        <h1>Documentation hub for an intelligent navigation assistant.</h1>
         <p class="hero-text">
-          NaviBot Docs is a lightweight documentation website for presenting the product idea,
-          user flows, architecture, roadmap, and implementation notes in one place.
+          NaviBot Docs explains the product idea, user flows, architecture, API direction,
+          and roadmap for building a smarter navigation assistant from concept to MVP.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#docs">Read the docs</a>
-          <a class="button secondary" href="#features">Explore features</a>
+          <a class="button primary" href="#docs">Explore documentation</a>
+          <a class="button secondary" href="#architecture">View architecture</a>
+        </div>
+        <div class="metrics" aria-label="Project highlights">
+          <div><strong>4</strong><span>Core modules</span></div>
+          <div><strong>MVP</strong><span>Ready structure</span></div>
+          <div><strong>Static</strong><span>GitHub Pages friendly</span></div>
         </div>
       </div>
-      <div class="hero-card" aria-label="NaviBot summary card">
-        <span class="status-dot"></span>
-        <h2>Project snapshot</h2>
-        <p>Docs-first website for a navigation bot concept.</p>
-        <ul>
-          <li>Product overview</li>
-          <li>Architecture notes</li>
-          <li>User journey mapping</li>
-          <li>Roadmap planning</li>
-        </ul>
+
+      <div class="hero-visual reveal">
+        <div class="map-card">
+          <div class="map-header">
+            <span class="pulse"></span>
+            <span>Live route intelligence</span>
+          </div>
+          <div class="route-canvas">
+            <span class="node node-a"></span>
+            <span class="node node-b"></span>
+            <span class="node node-c"></span>
+            <span class="route-line line-one"></span>
+            <span class="route-line line-two"></span>
+          </div>
+          <div class="insight-card">
+            <strong>Suggested path</strong>
+            <p>Fastest route with context-aware guidance and clear next action.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="overview" class="section">
+    <section id="product" class="section container reveal">
       <div class="section-heading">
-        <p class="eyebrow">Overview</p>
-        <h2>What is NaviBot?</h2>
+        <p class="eyebrow">Product vision</p>
+        <h2>Make navigation explainable, adaptive, and useful.</h2>
       </div>
-      <p>
-        NaviBot is positioned as an intelligent navigation assistant. This website can be used
-        to explain the concept, document the product requirements, and organize future technical
-        decisions before development scales.
+      <p class="lead">
+        NaviBot is designed as a conversational navigation layer that helps users understand where to go,
+        why a route is suggested, what trade-offs exist, and what to do next.
       </p>
     </section>
 
-    <section id="features" class="section grid-section">
-      <div class="feature-card">
-        <h3>Product clarity</h3>
-        <p>Explain the problem, target users, value proposition, and core use cases.</p>
-      </div>
-      <div class="feature-card">
-        <h3>User flows</h3>
-        <p>Map how a user discovers, asks, receives, and acts on navigation guidance.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Technical notes</h3>
-        <p>Document architecture, APIs, data sources, integrations, and decision logic.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Roadmap</h3>
-        <p>Track MVP scope, future features, research tasks, and launch milestones.</p>
-      </div>
+    <section id="features" class="section container grid-section">
+      <article class="feature-card reveal">
+        <span class="icon">⌁</span>
+        <h3>Context-aware guidance</h3>
+        <p>Use route, time, constraints, and user intent to provide better navigation choices.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">◇</span>
+        <h3>Explainable decisions</h3>
+        <p>Show why a route is recommended: speed, safety, cost, distance, or convenience.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">↗</span>
+        <h3>Journey planning</h3>
+        <p>Support multi-step travel, handoffs, reminders, and route alternatives.</p>
+      </article>
+      <article class="feature-card reveal">
+        <span class="icon">▣</span>
+        <h3>Documentation-first</h3>
+        <p>Keep product requirements, architecture, roadmap, and API thinking organized.</p>
+      </article>
     </section>
 
-    <section id="docs" class="section docs-panel">
+    <section id="architecture" class="section container split-panel reveal">
       <div>
-        <p class="eyebrow">Documentation</p>
-        <h2>Suggested documentation pages</h2>
+        <p class="eyebrow">Architecture</p>
+        <h2>Simple MVP architecture that can scale later.</h2>
         <p>
-          Start with these pages as the project grows. They can later be moved into a full docs
-          framework such as Docusaurus, VitePress, or MkDocs.
+          The initial architecture separates user input, routing/context services, decision logic,
+          response generation, and feedback loops. This keeps the product testable while leaving room
+          for map providers, AI services, and integrations.
         </p>
       </div>
-      <div class="doc-list">
-        <a href="docs/overview.md">Overview</a>
-        <a href="docs/product-requirements.md">Product requirements</a>
-        <a href="docs/architecture.md">Architecture</a>
-        <a href="docs/user-flows.md">User flows</a>
-        <a href="docs/roadmap.md">Roadmap</a>
+      <div class="architecture-stack">
+        <div>User request</div>
+        <div>Intent parser</div>
+        <div>Route/context engine</div>
+        <div>Recommendation layer</div>
+        <div>User-facing answer</div>
       </div>
     </section>
 
-    <section id="roadmap" class="section timeline">
+    <section id="docs" class="section container docs-panel reveal">
+      <div>
+        <p class="eyebrow">Docs</p>
+        <h2>Project documentation</h2>
+        <p>Open these Markdown files in the repo to expand the product and technical details.</p>
+      </div>
+      <div class="doc-list">
+        <a href="docs/overview.md">Overview <span>→</span></a>
+        <a href="docs/product-requirements.md">Product requirements <span>→</span></a>
+        <a href="docs/architecture.md">Architecture <span>→</span></a>
+        <a href="docs/user-flows.md">User flows <span>→</span></a>
+        <a href="docs/api-spec.md">API spec <span>→</span></a>
+        <a href="docs/roadmap.md">Roadmap <span>→</span></a>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section container timeline reveal">
       <p class="eyebrow">Roadmap</p>
-      <h2>Next milestones</h2>
-      <div class="timeline-item">
-        <span>01</span>
-        <p>Define the MVP problem statement and primary user persona.</p>
-      </div>
-      <div class="timeline-item">
-        <span>02</span>
-        <p>Create wireframes and document the first user journey.</p>
-      </div>
-      <div class="timeline-item">
-        <span>03</span>
-        <p>Choose the technical stack and define initial API/data requirements.</p>
-      </div>
+      <h2>From idea to MVP</h2>
+      <div class="timeline-item"><span>01</span><p>Define target user, top route-planning problem, and MVP success metric.</p></div>
+      <div class="timeline-item"><span>02</span><p>Create wireframes and document first conversational navigation flow.</p></div>
+      <div class="timeline-item"><span>03</span><p>Connect prototype to route/context data and test recommendation logic.</p></div>
+      <div class="timeline-item"><span>04</span><p>Launch a public demo and collect feedback from early users.</p></div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© 2026 NaviBot Docs. Built as a static documentation website.</p>
+    <div class="container footer-inner">
+      <p>© 2026 NaviBot Docs.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
