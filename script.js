@@ -3,13 +3,29 @@ const themeToggle = document.querySelector('[data-theme-toggle]');
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('[data-nav-links]');
 
-const savedTheme = localStorage.getItem('navibot-theme');
+function readStoredTheme() {
+  try {
+    return localStorage.getItem('navibot-theme');
+  } catch (_error) {
+    return null;
+  }
+}
+
+function storeTheme(theme) {
+  try {
+    localStorage.setItem('navibot-theme', theme);
+  } catch (_error) {
+    // Theme persistence is optional; the visible theme still updates.
+  }
+}
+
+const savedTheme = readStoredTheme();
 const preferredTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
 root.dataset.theme = savedTheme || root.dataset.theme || preferredTheme;
 
 function setTheme(theme) {
   root.dataset.theme = theme;
-  localStorage.setItem('navibot-theme', theme);
+  storeTheme(theme);
 }
 
 themeToggle?.addEventListener('click', () => {
