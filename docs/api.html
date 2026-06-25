@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>API Direction | NaviBot Docs</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css" /></head>
+<body><header class="site-header"><nav class="nav container"><a class="logo" href="../index.html"><span>N</span>NaviBot Docs</a><button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button><div class="nav-links" data-nav-links><a href="index.html">Docs</a><a href="product.html">Product</a><a href="architecture.html">Architecture</a><a href="roadmap.html">Roadmap</a><button class="theme-toggle" type="button" aria-label="Toggle color theme" data-theme-toggle>◐</button></div></nav></header>
+<main class="container doc-layout"><aside class="doc-sidebar"><a href="overview.html">Overview</a><a href="product.html">Product</a><a href="architecture.html">Architecture</a><a href="user-flows.html">User flows</a><a href="api.html">API</a><a href="roadmap.html">Roadmap</a></aside><article class="doc-content reveal"><p class="eyebrow">API direction</p><h1>Early interface shape</h1><p class="hero-text">These endpoints describe the first useful boundary between a client interface and route intelligence service.</p><h2>Candidate endpoints</h2><ul><li><strong>POST /trips/plan</strong>: parse a request and return route recommendations.</li><li><strong>POST /trips/compare</strong>: compare route candidates against user constraints.</li><li><strong>POST /feedback</strong>: record whether a recommendation helped.</li><li><strong>GET /health</strong>: expose service health for deployment checks.</li></ul><h2>Example request</h2><pre class="code-block"><code>{
+  "origin": "Airport Terminal 2",
+  "destination": "City Center",
+  "departureTime": "2026-06-26T09:00:00+05:30",
+  "preferences": ["fewest_transfers", "reliable"]
+}</code></pre><h2>Example response</h2><pre class="code-block"><code>{
+  "recommendation": {
+    "summary": "Take the express rail route",
+    "estimatedMinutes": 38,
+    "reasons": ["fastest", "low transfer risk", "short walk"]
+  },
+  "alternatives": [
+    { "summary": "Taxi", "estimatedMinutes": 46 },
+    { "summary": "Bus plus metro", "estimatedMinutes": 55 }
+  ]
+}</code></pre><h2>Design notes</h2><p>Keep provider-specific fields behind adapters. The API should return stable NaviBot objects even when the map or routing provider changes.</p></article></main>
+<footer class="footer"><div class="container footer-inner"><p>© 2026 NaviBot Docs.</p><div><a href="index.html">Docs</a><a href="../index.html">Home</a></div></div></footer><script src="../script.js"></script></body></html>
